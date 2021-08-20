@@ -1,0 +1,27 @@
+[
+{ "meta": { "name": "BEND:LTUH:220:BDES" , "EGU": "GeV/c" , "PREC": "7" },
+"data": [
+{ "secs": 1603728786, "val": 7.252687635661488, "nanos": 145635588, "severity":0, "status":0 },
+{ "secs": 1603771290, "val": 7.252687635661488, "nanos": 518434667, "severity":0, "status":0 },
+{ "secs": 1603771290, "val": 4.861930333270339, "nanos": 538671506, "severity":0, "status":0 },
+{ "secs": 1603771613, "val": 4.861897168533722, "nanos": 474448713, "severity":0, "status":0 },
+{ "secs": 1603771613, "val": 4.861880586168033, "nanos": 498470124, "severity":0, "status":0 },
+{ "secs": 1603771703, "val": 7.047169719887653, "nanos": 224017281, "severity":0, "status":0 },
+{ "secs": 1603772251, "val": 7.149949781031283, "nanos": 697397131, "severity":0, "status":0 },
+{ "secs": 1603772251, "val": 7.149974890514575, "nanos": 723138847, "severity":0, "status":0 },
+{ "secs": 1603772585, "val": 7.252587880546395, "nanos": 706153033, "severity":0, "status":0 },
+{ "secs": 1603772585, "val": 10.514950080429044, "nanos": 727232688, "severity":0, "status":0 },
+{ "secs": 1603773026, "val": 10.494183047424334, "nanos": 481493038, "severity":0, "status":0 },
+{ "secs": 1603773026, "val": 9.700048454975205, "nanos": 508563392, "severity":0, "status":0 },
+{ "secs": 1603773372, "val": 9.672857830990885, "nanos": 872360122, "severity":0, "status":0 },
+{ "secs": 1603773372, "val": 8.745056591032165, "nanos": 913731723, "severity":0, "status":0 },
+{ "secs": 1603775208, "val": 10.514945928465409, "nanos": 120866139, "severity":0, "status":0 },
+{ "secs": 1603775208, "val": 10.514972963553715, "nanos": 132539711, "severity":0, "status":0 },
+{ "secs": 1603792266, "val": 10.51498648109805, "nanos": 928524419, "severity":0, "status":0 },
+{ "secs": 1603792266, "val": 10.514993239870265, "nanos": 943057922, "severity":0, "status":0 },
+{ "secs": 1603859805, "val": 10.514996619256383, "nanos": 198086777, "severity":0, "status":0 },
+{ "secs": 1603859805, "val": 10.514998308949446, "nanos": 213007305, "severity":0, "status":0 },
+{ "secs": 1603924165, "val": 10.514999153795978, "nanos": 134781522, "severity":0, "status":0 },
+{ "secs": 1603924165, "val": 10.514999576219243, "nanos": 152612351, "severity":0, "status":0 }
+] }
+ ]

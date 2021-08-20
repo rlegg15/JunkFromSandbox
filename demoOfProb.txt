@@ -1,0 +1,47 @@
+from pydm import Display
+from PyQt5.QtGui import QStandardItem
+from PyQt5.QtWidgets import (QWidgetItem, QCheckBox, QPushButton, QLineEdit,
+                             QGroupBox, QHBoxLayout, QMessageBox, QWidget,
+                             QLabel, QFrame, QComboBox, QRadioButton)
+from os import path, pardir
+from qtpy.QtCore import Slot, QTimer
+from functools import partial, reduce
+from datetime import datetime, timedelta
+import sys
+
+
+class MicDisp(Display):
+
+    def __init__(self, parent=None, args=None, ui_filename="FFT_test.ui"):
+        super(MicDisp, self).__init__(parent=parent, args=args, ui_filename=ui_filename)
+        self.pathHere = path.dirname(sys.modules[self.__module__].__file__)
+        self.ui.StrtBut.clicked.connect(self.setGOVal)
+
+        self.timer= QTimer()            
+        self.timer.start(1000)
+
+    def showTime(self):
+        global count
+        self.ui.AcqProg.setText("Data Acquisition started. "+str(count)+" sec left.")	# decrementing the counter
+        count -= 1
+        if count<0:
+            self.timer.stop()
+        return
+
+
+    def setGOVal(self):
+        global count
+        timMeas = self.ui.spinBox.value()  # Get time for measurement from spinBox            
+        count=timMeas
+        print(count)
+        if count>0:
+            print(self.timer.timeout())
+            self.timer.timeout.connect(self.showTime)
+  
+        print("the count is",count)
+        if count<0:
+            print("got beyond the loop")
+        return
+
+       
+ 

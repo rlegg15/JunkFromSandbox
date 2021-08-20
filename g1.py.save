@@ -1,0 +1,36 @@
+import json
+def getValuesOverTimeRange():
+        results = {}
+        pvList = ["BEND:LTUH:220:BDES"]
+        with open("test",'r') as f:
+          for pv in pvList: 
+              try:
+                   response = f.read()
+                   jsonData = json.loads(response)
+
+                   element =jsonData.pop()
+                   # result = {"times":[], "values":[]}
+                   result = {"values":[]}
+                   for datum in element[u'data']:
+                        # result["times"].append(datum[u'secs'])
+                        result["values"].append(datum[u'val'])
+
+                   results[pv] = len(result["values"])
+
+
+              except ValueError:
+
+                   print("JSON error with {PVS}".format(PVS=pvList))
+
+        f.close()
+        return results
+
+if __name__ == "__main__":
+    r = []
+    rye = []
+    testList = ["BEND:LTUH:220:BDES"]
+    # print(archiver.getDataAtTime(testList, datetime.now()))
+    r=getValuesOverTimeRange()
+    # rye = r ["BEND:LTUH:220:BDES"]["values"]
+    # print(len(rye))
+    print (r)
