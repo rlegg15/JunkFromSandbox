@@ -2,7 +2,7 @@ from pydm import Display
 from PyQt5.QtGui import QStandardItem
 from PyQt5.QtWidgets import (QWidgetItem, QCheckBox, QPushButton, QLineEdit,
                              QGroupBox, QHBoxLayout, QMessageBox, QWidget,
-                             QLabel, QFrame, QComboBox, QRadioButton)
+                             QString, QLabel, QFrame, QComboBox, QRadioButton)
 from os import path
 import subprocess
 import sys
@@ -39,20 +39,22 @@ class MicDisp(Display):
         self.ui.AcqProg.setText("Test of printing output from subprocess  line by line")
 
         self.ui.StrtBut.clicked.connect(self.subCall)  # call function setGOVal when strtBut is pressed
-        self.ui.AcqProg.setText("Select 1 CM and 1 cavity at a time for commissioning. \nLimit plotted waveforms to 30 sec.")    
+        self.ui.AcqProg.clear()    
 
 
     def subCall(self):    
         try:
-            cmd=['python','-u','/home/user/tutorial/GitDir/Microphonics/Testy2.py']            
+            cmd=['python','-u','/home/user/tutorial/GitDir/Microphonics/Testy2.py']  
+            output = QString()
             process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=1, shell=False)
             while True:
                 output = process.stdout.readline().decode()
                 if output == '' and process.poll() is not None:
                     break
                 if output !='':
-                    print(output)
-                    self.ui.AcqProg.setText(output)
+                    print(output, type(output))
+                    self.ui.AcqProg.text(str(output))
+                    self.ui.AcqProg.update()
         
             return_code = process.poll()
             if return_code==0:
